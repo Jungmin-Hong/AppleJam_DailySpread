@@ -14,6 +14,7 @@ class Authentication: UIViewController, FUIAuthDelegate  {
     var handle:AuthStateDidChangeListenerHandle!
     let authUI = FUIAuth.defaultAuthUI()
     let userNotificationCenter = UNUserNotificationCenter.current()
+    let notiTime: [Int] = [12, 54, 00]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,7 @@ class Authentication: UIViewController, FUIAuthDelegate  {
         self.navigationItem.hidesBackButton = true
         userNotificationCenter.delegate = self
         requestNotificationAuthorization()
+        print(notiTime)
         sendNotification() //알림
     }
     
@@ -88,9 +90,9 @@ class Authentication: UIViewController, FUIAuthDelegate  {
         notificationContent.body = "오늘의 키워드별 뉴스를 확인해보세요!"
         
         var dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: Date())
-        dateComponents.hour = 09
-        dateComponents.minute = 00
-        dateComponents.second = 00
+        dateComponents.hour = notiTime[0]
+        dateComponents.minute = notiTime[1]
+        dateComponents.second = notiTime[2]
 
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         let request = UNNotificationRequest(identifier: "Noti", content: notificationContent, trigger: trigger)
