@@ -15,9 +15,6 @@ struct NewssSearchManager {
         
         let parameters = NewsSearchRequestModel(query: keyword)
         
-//        id: kxJq07hlC9DToC8QaFtT
-//        secret: wHXEyuXB3c
-        
         let headers: HTTPHeaders = [
             "X-Naver-Client-Id" : "kxJq07hlC9DToC8QaFtT",
             "X-Naver-Client-Secret": "wHXEyuXB3c"

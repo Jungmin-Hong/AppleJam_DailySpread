@@ -130,9 +130,6 @@ extension ReviewWriteViewController: ReviewWriteProtocol {
             
         }
         
-        
-        
-        
     }
     
     func presentToSearchNewsViewController() {

@@ -9,7 +9,7 @@ import Foundation
 
 
 struct NewsSearchRequestModel: Codable {
-    /// 검색할 책 키워드
+    /// 검색할 키워드
     
     let query: String
 }

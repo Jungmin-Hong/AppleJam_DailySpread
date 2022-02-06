@@ -14,17 +14,14 @@ class Authentication: UIViewController, FUIAuthDelegate  {
     var handle:AuthStateDidChangeListenerHandle!
     let authUI = FUIAuth.defaultAuthUI()
     let userNotificationCenter = UNUserNotificationCenter.current()
-    let notiTime: [Int] = [12, 54, 00]
+    let notiTime: [Int] = [09, 00, 00]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        //authUI!.delegate = self
         navigationController?.navigationBar.isHidden = false //back버튼 생기게 하는 코드(false일떄)
         self.navigationItem.hidesBackButton = true
         userNotificationCenter.delegate = self
         requestNotificationAuthorization()
-        print(notiTime)
         sendNotification() //알림
     }
     
@@ -118,11 +115,9 @@ extension FUIAuthBaseViewController {
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.leftBarButtonItem = nil
-        //self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        //self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
 }
 

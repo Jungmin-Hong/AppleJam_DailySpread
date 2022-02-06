@@ -9,7 +9,6 @@ import Foundation
  
 struct NewssSearchResponseModel: Decodable {
     var items: [News_s] = []
-    
 }
 
 
